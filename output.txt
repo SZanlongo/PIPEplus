@@ -1,0 +1,35 @@
+pan:1: invalid end state (at depth 0)
+pan: wrote proModel.pml.trail
+
+(Spin Version 6.1.0 -- 4 May 2011)
+Warning: Search not completed
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	- (none specified)
+	assertion violations	+
+	acceptance   cycles 	- (not selected)
+	invalid end states	+
+
+State-vector 80 byte, depth reached 2, errors: 1
+        2 states, stored
+        0 states, matched
+        2 transitions (= stored+matched)
+        0 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.000	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.288	actual memory usage for states (unsuccessful compression: 139996.30%)
+         	state-vector as stored = 151168 byte + 28 byte overhead
+    4.000	memory used for hash table (-w19)
+    0.534	memory used for DFS stack (-m10000)
+    4.730	total actual memory usage
+
+
+pan: elapsed time 0 seconds
+spin: /Users/liusu1011/FIU/FIU12Spring/Energid/PIPE+/proModel.pml:80, Error: syntax error	saw ''}' = 125'
+spin: trail ends after 1 steps
+#processes: 1
+  1:	proc  0 (:init:) /Users/liusu1011/FIU/FIU12Spring/Energid/PIPE+/proModel.pml:68 (state 3)
+1 process created
