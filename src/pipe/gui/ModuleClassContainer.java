@@ -13,7 +13,6 @@ import java.lang.reflect.Method;
 public class ModuleClassContainer {
    
    private String displayName;
-   private Method methods[];
    private Class thisClass;
    
    

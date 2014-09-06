@@ -17,7 +17,6 @@ import javax.swing.JOptionPane;
 import pipe.dataLayer.DataLayer;
 import pipe.dataLayer.PNMatrix;
 import pipe.dataLayer.Place;
-import pipe.dataLayer.Transition;
 import pipe.gui.CreateGui;
 import pipe.gui.widgets.ButtonBar;
 import pipe.gui.widgets.EscapableDialog;
@@ -196,7 +195,7 @@ public class InvariantAnalysis
     */ 
    public String reportTInvariants(int[] M) {
       TInvariants = findVectors(IncidenceMatrix);
-      Transition[] transitionArray = pnmlData.getTransitions();
+      pnmlData.getTransitions();
 
       String result = "<h3>T-Invariants</h3>";
       result += ResultsHTMLPane.makeTable(
@@ -227,7 +226,7 @@ public class InvariantAnalysis
       }
       IncidenceMatrix = new PNMatrix(array);
       
-      int[] currentMarking = sourceDataLayer.getCurrentMarkingVector();
+      sourceDataLayer.getCurrentMarkingVector();
       return findVectors(IncidenceMatrix.transpose());
    }
    
@@ -244,7 +243,7 @@ public class InvariantAnalysis
       }
       IncidenceMatrix = new PNMatrix(array);
       
-      int[] currentMarking = sourceDataLayer.getCurrentMarkingVector();
+      sourceDataLayer.getCurrentMarkingVector();
       return findVectors(IncidenceMatrix);
    }
    //</Marc>

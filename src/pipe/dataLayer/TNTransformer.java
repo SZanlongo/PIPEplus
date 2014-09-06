@@ -177,7 +177,6 @@ public class TNTransformer {
 		}
 
 		if(inputPlace != null ) {
-			Integer attrValue = null;
 			String idInput = inputPlace.getId();
 			String nameInput = inputPlace.getName();
 //			Double nameOffsetYInput = inputPlace.getNameOffsetXObject();
@@ -219,14 +218,13 @@ public class TNTransformer {
 		}
 
 		if(inputTransition != null ) {
-			Integer attrValue = null;
 			Double positionXInput = inputTransition.getPositionXObject();
 			Double positionYInput = inputTransition.getPositionYObject();
 			String idInput = inputTransition.getId();
 			String nameInput = inputTransition.getName();
 			double aRate = inputTransition.getRate();
                         double priority = inputTransition.getPriority();
-			int orientation = inputTransition.getAngle();
+			inputTransition.getAngle();
 
                         transitionElement.setAttribute("weight", (aRate != 1 ? String.valueOf(aRate):"1"));
                         System.out.println("prioritat: "+priority);
@@ -250,13 +248,12 @@ public class TNTransformer {
 		}
 
 		if(inputTransition != null ) {
-			Integer attrValue = null;
 			Double positionXInput = inputTransition.getPositionXObject();
 			Double positionYInput = inputTransition.getPositionYObject();
 			String idInput = inputTransition.getId();
 			String nameInput = inputTransition.getName();
 			double aRate = inputTransition.getRate();
-			int orientation = inputTransition.getAngle();
+			inputTransition.getAngle();
 
                         Element transLabel = createTNLabel(nameInput,"L"+nameInput,0,0,document);
                         Element transGraph = this.createTNGraphics(0,positionXInput.intValue(),

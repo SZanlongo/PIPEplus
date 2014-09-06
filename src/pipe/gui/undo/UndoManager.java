@@ -245,17 +245,4 @@ public class UndoManager {
       }
    }
    
-   
-   private void debug(){
-      int i = startOfBuffer;
-      System.out.println("");
-      for (int k = 0; k < sizeOfBuffer; k++) {
-         Iterator<UndoableEdit> currentEdit = edits.get(i).iterator();
-         while (currentEdit.hasNext()) {
-            System.out.println("["+ i + "]" + currentEdit.next().toString());
-         }
-         i = (i + 1 ) % UNDO_BUFFER_CAPACITY;
-      }
-   }
-   
 }

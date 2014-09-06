@@ -8,11 +8,9 @@ public class ErrorMsg {
     public String msg;
   };
   public boolean anyErrors;
-  private String str;
   public Vector<Msg> msgs;
 
   public ErrorMsg(String str) {
-    this.str = str;
     msgs = new Vector(10);
   }
 

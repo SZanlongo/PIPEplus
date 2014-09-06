@@ -1,7 +1,6 @@
 package pipe.dataLayer;
 
 import java.awt.BasicStroke;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Paint;
@@ -16,15 +15,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-
-import formulaParser.ErrorMsg;
-import formulaParser.Interpreter;
-import formulaParser.Parse;
 import formulaParser.Symbol;
 import formulaParser.SymbolTable;
-import formulaParser.formulaAbsyntree.Sentence;
 import pipe.gui.undo.TransitionFormulaEdit;
 import pipe.gui.Pipe;
 import pipe.gui.CreateGui;
@@ -113,21 +105,9 @@ public class Transition
    /** The transition rate */
    private double rate = 1;   
    
-   /** Rate X-axis Offset */
-   private Double rateOffsetX = 0.0;
-   
-   /** Rate Y-axis Offset */
-   private Double rateOffsetY = 24.0;
-   
    /**  The transition priority */
    private Integer priority = 1;
 
-   /** Priority X-axis Offset */
-   private Double priorityOffsetX = 0.0;
-   
-   /** Priority Y-axis Offset */
-   private Double priorityOffsetY = 13.0;   
-   
    /** The transtion rate parameter */
    private RateParameter rateParameter = null;
      
@@ -1040,7 +1020,7 @@ public class Transition
     * to symbol table
     * Parameter mode: true->fire_mode, false->check_mode
     */
-   public boolean getTokenExpired(boolean mode, int[] getTokIndex){
+    public boolean getTokenExpired(boolean mode, int[] getTokIndex){
 	   /**
 	    * Below is real code
 	    */

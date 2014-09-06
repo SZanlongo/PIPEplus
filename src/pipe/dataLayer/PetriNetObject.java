@@ -16,7 +16,6 @@ import pipe.gui.CreateGui;
 import pipe.gui.GuiView;
 import pipe.gui.Pipe;
 import pipe.gui.Translatable;
-import pipe.gui.Zoomer;
 import pipe.gui.Zoomable;
 import pipe.gui.undo.UndoableEdit;
 import pipe.gui.undo.PetriNetObjectNameEdit;
@@ -51,9 +50,6 @@ public abstract class PetriNetObject
    
    protected boolean deleted = false;
    protected boolean markedAsDeleted = false;
-   
-   // The ZoomController of the GuiView this component is part of.
-   private Zoomer zoomControl;   
    
    // Integer value which represents a zoom percentage
    protected int zoom = 100;   

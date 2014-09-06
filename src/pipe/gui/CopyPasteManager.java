@@ -143,16 +143,6 @@ public class CopyPasteManager
    }
 
    
-   private void clearPaste(GuiView view) {
-       if (pasteInProgress) {
-         view.remove(this);
-         pasteInProgress = false;
-         sourceView = null;
-         //updateBounds();
-      }
-   }
-
-   
    private void endPaste(GuiView view){
       ArrayList <UndoableEdit> undo = new ArrayList();
       

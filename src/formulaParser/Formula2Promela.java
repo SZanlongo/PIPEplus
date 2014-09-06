@@ -5,12 +5,8 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import pipe.dataLayer.Arc;
-import pipe.dataLayer.BasicType;
-import pipe.dataLayer.DataType;
 import pipe.dataLayer.Place;
-import pipe.dataLayer.Token;
 import pipe.dataLayer.Transition;
-import pipe.dataLayer.abToken;
 import formulaParser.formulaAbsyntree.*;
 import formulaParser.ErrorMsg;
 

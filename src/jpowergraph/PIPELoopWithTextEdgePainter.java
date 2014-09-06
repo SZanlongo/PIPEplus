@@ -31,14 +31,7 @@ public class PIPELoopWithTextEdgePainter <T extends LoopEdge>
    public static final int CIRCULAR = 0;
    public static final int RECTANGULAR = 1;
    
-   private JPowerGraphColor edgeColor1;
-   private JPowerGraphColor edgeColor2;
-   private JPowerGraphColor edgeColor3;
    private int shape = CIRCULAR;
-   
-   private int widthpad = 15;
-   private int heightpad = 15;
-
    
    /**
     * Creates a new instance of PIPETangibleState

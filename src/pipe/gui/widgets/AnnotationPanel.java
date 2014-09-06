@@ -103,15 +103,6 @@ public class AnnotationPanel extends javax.swing.JPanel {
    }//GEN-LAST:event_cancelButtonActionPerformed
 
    
-   private void focusGained(javax.swing.JTextField textField){
-      textField.setCaretPosition(0);
-      textField.moveCaretPosition(textField.getText().length());
-   }
-   
-   private void focusLost(javax.swing.JTextField textField){
-      textField.setCaretPosition(0);
-   }   
-   
    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
       annotation.setText(textArea.getText());
       annotation.repaint();

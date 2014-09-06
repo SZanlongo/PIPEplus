@@ -29,9 +29,6 @@ public class NameLabel
    private Font font = 
            new Font(Pipe.LABEL_FONT, Font.BOLD, Pipe.LABEL_DEFAULT_FONT_SIZE);
 
-   private boolean doZoom = false;
-
-   
    public NameLabel(){
       this("");
    }

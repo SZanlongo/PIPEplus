@@ -3,7 +3,6 @@
 package formulaParser;
 
 import formulaParser.ErrorMsg;
-import java_cup.runtime.Symbol;
 
 
 /**
@@ -225,22 +224,8 @@ public class Yylex implements java_cup.runtime.Scanner {
       from input */
   private int zzEndRead;
 
-  /** number of newlines encountered up to the start of the matched text */
-  private int yyline;
-
   /** the number of characters up to the start of the matched text */
   private int yychar;
-
-  /**
-   * the number of characters from the last newline up to the start of the 
-   * matched text
-   */
-  private int yycolumn;
-
-  /** 
-   * zzAtBOL == true <=> the scanner is currently at the beginning of a line
-   */
-  private boolean zzAtBOL = true;
 
   /** zzAtEOF == true <=> the scanner is at the EOF */
   private boolean zzAtEOF;
@@ -384,12 +369,11 @@ public Yylex(java.io.Reader s, ErrorMsg e) {
    */
   public final void yyreset(java.io.Reader reader) {
     zzReader = reader;
-    zzAtBOL  = true;
     zzAtEOF  = false;
     zzEOFDone = false;
     zzEndRead = zzStartRead = 0;
     zzCurrentPos = zzMarkedPos = 0;
-    yyline = yychar = yycolumn = 0;
+    yychar = 0;
     zzLexicalState = YYINITIAL;
   }
 
@@ -535,26 +519,19 @@ public Yylex(java.io.Reader s, ErrorMsg e) {
         case '\u0085':
         case '\u2028':
         case '\u2029':
-          yyline++;
-          yycolumn = 0;
-          zzR = false;
+			zzR = false;
           break;
         case '\r':
-          yyline++;
-          yycolumn = 0;
-          zzR = true;
+			zzR = true;
           break;
         case '\n':
           if (zzR)
             zzR = false;
           else {
-            yyline++;
-            yycolumn = 0;
           }
           break;
         default:
           zzR = false;
-          yycolumn++;
         }
       }
 
@@ -575,7 +552,8 @@ public Yylex(java.io.Reader s, ErrorMsg e) {
           else 
             zzPeek = zzBufferL[zzMarkedPosL] == '\n';
         }
-        if (zzPeek) yyline--;
+        if (zzPeek) {
+		}
       }
       zzAction = -1;
 

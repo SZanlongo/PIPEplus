@@ -41,9 +41,6 @@ public abstract class PlaceTransitionObject
    protected double componentWidth;
    protected double componentHeight;
    
-   /** Used in the mouse events to control dragging*/
-   private boolean isDragging;
-   
    protected Collection connectTo = new LinkedList();
    protected Collection connectFrom = new LinkedList();
    protected static Arc someArc;
@@ -516,14 +513,5 @@ public abstract class PlaceTransitionObject
    public void zoomUpdate(int value) {
       zoom = value;
       update();
-   }
-   
-   
-   // Clone object and deep copy the pnNames
-   public PetriNetObject clone() {
-      PetriNetObject pnObjectCopy = super.clone();
-      pnObjectCopy.pnName = (NameLabel) pnName.clone();
-      
-      return pnObjectCopy;
-   }     
+   }    
 }

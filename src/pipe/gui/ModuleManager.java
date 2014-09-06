@@ -325,8 +325,6 @@ public class ModuleManager {
                      ((ModuleMethod)nodeObj).execute(parameter);
                   } 
                } else if (nodeObj == loadNodeString) {
-                  DefaultMutableTreeNode newNode ;
-                  
                   //Create a file chooser
                   JFileChooser fc = new JFileChooser();
                   fc.setFileFilter(

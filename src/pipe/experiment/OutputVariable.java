@@ -21,8 +21,6 @@ public class OutputVariable extends Variable {
     private String resultToUse;
     private String nodeName;
     private int nodeType;
-    private double initialValue;
-    
     /** Creates a new instance of OutputVariable.
      * @param name name of the variable.
      * @param resultToUse result linked to this variable.

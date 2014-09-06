@@ -27,15 +27,6 @@ public class GSPN
    protected ResultsHTMLPane results;
    
 
-   /**Qualitative analysis - see if the supplied GSPN is an EFC-GSPN.  
-    * This is a necessary precondition for quantitative analysis.
-    * @param DataLayer
-    */
-   private boolean isEFCdGSPN(DataLayer pnmlData) {
-      return extendedFreeChoiceNet(pnmlData);
-   }
-
-
    //Format StateList data nicely.
    protected String renderStateSpaceLinked(DataLayer pnmlData, StateList data) {
       if ((data.size() == 0) || (data.get(0).length == 0)) {

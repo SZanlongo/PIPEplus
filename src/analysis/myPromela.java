@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
 
-import ltlparser.PropertyFormulaToPromela;
-
 import formulaParser.ErrorMsg;
 import formulaParser.Formula2Promela;
-import formulaParser.Interpreter;
 import formulaParser.Parse;
 //import formulaParser.Printer;
 import formulaParser.formulaAbsyntree.Sentence;
@@ -18,7 +15,6 @@ import pipe.dataLayer.DataLayer;
 import pipe.dataLayer.Place;
 import pipe.dataLayer.Token;
 import pipe.dataLayer.Transition;
-import pipe.dataLayer.abToken;
 
 /**
  * Get String output as Promela, from a DataLayer of Petri net
@@ -357,18 +353,6 @@ public class myPromela {
 			if(str.equals(s)) result = true;
 		}
 		return result;
-	}
-	
-	private int checkStrToIndex(String str, ArrayList<String> arraylist){
-		int index = -1;
-		Iterator<String> itr = this.strToShort.iterator();
-		while(itr.hasNext()){
-			String s = itr.next();
-			if(str.equals(s)){
-				index = strToShort.indexOf(itr.next());
-			}
-		}
-		return index;
 	}
 	
 	public String getPromela()

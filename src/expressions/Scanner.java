@@ -199,9 +199,6 @@ class Scanner implements expressions.java_cup.runtime.Scanner {
   /** the textposition at the last accepting state */
   private int zzMarkedPos;
 
-  /** the textposition at the last state to be included in yytext */
-  private int zzPushbackPos;
-
   /** the current text position in the buffer */
   private int zzCurrentPos;
 
@@ -211,23 +208,6 @@ class Scanner implements expressions.java_cup.runtime.Scanner {
   /** endRead marks the last character in the buffer, that has been read
       from input */
   private int zzEndRead;
-
-  /** number of newlines encountered up to the start of the matched text */
-  private int yyline;
-
-  /** the number of characters up to the start of the matched text */
-  private int yychar;
-
-  /**
-   * the number of characters from the last newline up to the start of the 
-   * matched text
-   */
-  private int yycolumn;
-
-  /** 
-   * zzAtBOL == true <=> the scanner is currently at the beginning of a line
-   */
-  private boolean zzAtBOL = true;
 
   /** zzAtEOF == true <=> the scanner is at the EOF */
   private boolean zzAtEOF;
@@ -283,7 +263,6 @@ class Scanner implements expressions.java_cup.runtime.Scanner {
       zzEndRead-= zzStartRead;
       zzCurrentPos-= zzStartRead;
       zzMarkedPos-= zzStartRead;
-      zzPushbackPos-= zzStartRead;
       zzStartRead = 0;
     }
 
@@ -333,11 +312,9 @@ class Scanner implements expressions.java_cup.runtime.Scanner {
    */
   public final void yyreset(java.io.Reader reader) {
     zzReader = reader;
-    zzAtBOL  = true;
     zzAtEOF  = false;
     zzEndRead = zzStartRead = 0;
-    zzCurrentPos = zzMarkedPos = zzPushbackPos = 0;
-    yyline = yychar = yycolumn = 0;
+    zzCurrentPos = zzMarkedPos = 0;
     zzLexicalState = YYINITIAL;
   }
 

@@ -62,7 +62,7 @@ public class AnimationHistory
    }
    
    
-   public void addHistoryItem(String transitionName) {
+    public void addHistoryItem(String transitionName) {
       fSeq.add(transitionName);
       currentItem = fSeq.size();
       updateText();
@@ -78,8 +78,6 @@ public class AnimationHistory
    public void updateText() {
       String newS;
       int count=1;
-      Style currentStyle = regular;
-      
       Enumeration e = fSeq.elements();
       try {
          doc.remove(initText.length(),doc.getLength()-initText.length());

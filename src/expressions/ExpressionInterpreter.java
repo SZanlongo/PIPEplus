@@ -13,7 +13,6 @@ package expressions;
 import expressions.java_cup.runtime.ComplexSymbolFactory;
 import expressions.java_cup.runtime.SymbolFactory;
 import java.util.Hashtable;
-import java.io.StringReader;
 
 /**
  *
@@ -28,15 +27,6 @@ public class ExpressionInterpreter {
      */
     public ExpressionInterpreter() {
         variables = new Hashtable<String,Double>();
-    }
-    
-    /**
-     * Adds a new variable with null value to the ExpressionInterpreter
-     * 
-     * @param vName variable name
-     */
-    private void newVariable(String vName){
-        variables.put(vName,null);
     }
     
     /** Assigns a value to a variable. If the variable doesn't exist, it is created.

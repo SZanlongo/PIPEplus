@@ -17,11 +17,6 @@ import javax.swing.JScrollPane;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
-
-import pipe.dataLayer.PNMatrix;
-import pipe.dataLayer.PetriNetObject;
 import pipe.gui.widgets.ButtonBar;
 import pipe.gui.widgets.FileBrowser;
 

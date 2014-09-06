@@ -1,6 +1,5 @@
 package formulaParser.formulaAbsyntree;
 import formulaParser.Visitor;
-import pipe.dataLayer.Token;
 
 public class Identifier {
 	  public String key;

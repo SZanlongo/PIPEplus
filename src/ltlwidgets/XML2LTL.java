@@ -6,7 +6,6 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.ByteArrayInputStream;
-import java.util.HashMap;
 
 
 public class XML2LTL extends Throwable{
@@ -16,10 +15,6 @@ public class XML2LTL extends Throwable{
     private int m_errorPos;
     private String m_errorMsg;
     private boolean m_hasErrors;
-
-    private HashMap<String,String> m_symbols;
-
-    private XML2LTL(){}
 
     public XML2LTL(String xml){
         m_xml = xml;
@@ -268,7 +263,6 @@ public class XML2LTL extends Throwable{
         String res = "";
         node = node.getFirstChild(); // TODO check that there is only one child
         String name = node.getNodeName();
-        char code = 0;
         if (name.equals(Names_of_LTL_OPS.BOOL))
             res = node.getLastChild().getNodeValue(); // TODO this value has to be either true or false
         else if (name.equals(Names_of_LTL_OPS.NUM))

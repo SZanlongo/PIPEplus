@@ -168,7 +168,7 @@ public class Dnamaca
                generateMod();
                out.write(modString);
                out.close();
-               DnamacaRun dnamaca = new DnamacaRun();
+               new DnamacaRun();
             } catch (IOException e3) {
                System.out.println("Could not write to temporary file!");
                e3.printStackTrace();
@@ -281,45 +281,6 @@ public class Dnamaca
          } else {
             modString += "\t\t\\weight{" + transitions[i].getRate() + "}\n";
          }
-         modString += "\t}\n";
-      }
-   }
-   
-   
-   private void performance() {
-      modString += "\\performance{\n";
-      tokenDistribution();
-      transitionMeasures();
-      modString += "}\n";
-   }
-
-   
-   private void tokenDistribution() {
-      for(int i=0; i<places.length; i++) {
-         modString += "\t\\statemeasure{Mean tokens on place " + 
-                 places[i].getId() + "}{\n";
-         modString += "\t\t\\estimator{mean variance distribution}\n";
-         modString += "\t\t\\expression{" + places[i].getId() + "}\n";
-         modString += "\t}\n";
-      }
-   }
-
-   
-   private void transitionMeasures() {
-      for(int i=0; i<transitions.length; i++) {
-         modString += "\t\\statemeasure{Enabled probability for transition " + 
-                 transitions[i].getId() + "}{\n";
-         modString += "\t\t\\estimator{mean}\n";
-         modString += "\t\t\\expression{(" + getTransitionConditions(i) +
-                 ") ? 1 : 0}\n";
-         modString += "\t}\n";
-         
-         modString += "\t\\countmeasure{Throughput for transition " + 
-                 transitions[i].getId() + "}{\n";
-         modString += "\t\t\\estimator{mean}\n";
-         modString += "\t\t\\precondition{1}\n";
-         modString += "\t\t\\postcondition{1}\n";
-         modString += "\t\t\\transition{" + transitions[i].getId() + "}\n";
          modString += "\t}\n";
       }
    }

@@ -212,7 +212,6 @@ public class DataLayerWriter {
       }
       
       if (inputPlace != null ) {
-         Integer attrValue = null;
          Double positionXInput = inputPlace.getPositionXObject();
          Double positionYInput = inputPlace.getPositionYObject();
          String idInput = inputPlace.getId();
@@ -321,81 +320,6 @@ public class DataLayerWriter {
    }
 
    
-   private Element createAgentNetElement(DataLayer agentLayer, Document document){
-	   Element agentNetElement = null;
-	   
-	   if(document != null){
-		   agentNetElement = document.createElement("agentNet");
-	   }
-	   if(agentLayer != null){
-		   AnnotationNote[] labels = agentLayer.getLabels();
-	         for (int i = 0; i < labels.length; i++) {
-	               agentNetElement.appendChild(createAnnotationNoteElement(labels[i], document));
-	         }         
-	         
-	         MarkingParameter[] markingParameters = agentLayer.getMarkingParameters();
-	         for (int i = 0; i < markingParameters.length; i++) {
-	            agentNetElement.appendChild(createDefinition(markingParameters[i], document));
-	         }        
-	         
-	         RateParameter[] rateParameters = agentLayer.getRateParameters();
-	         for (int i = 0; i < rateParameters.length; i++) {
-	            agentNetElement.appendChild(createDefinition(rateParameters[i], document));
-	         }            
-	         
-	         Place[] places = agentLayer.getPlaces();
-	         for (int i = 0 ; i < places.length ; i++) {
-	            agentNetElement.appendChild(createPlaceElement(places[i], document));
-	         }
-
-	         Transition[] transitions = agentLayer.getTransitions();
-	         for (int i = 0 ; i < transitions.length ; i++) {
-	            agentNetElement.appendChild(createTransitionElement(transitions[i], document));
-	         }
-
-	         Arc[] arcs = agentLayer.getArcs();
-	         for (int i = 0 ; i < arcs.length ; i++) {
-	            Element newArc = createArcElement(arcs[i],document);
-	            
-	            int arcPoints = arcs[i].getArcPath().getArcPathDetails().length;
-	            String[][] point = arcs[i].getArcPath().getArcPathDetails();
-	            for (int j = 0; j < arcPoints; j++) {
-	               newArc.appendChild(createArcPoint(point[j][0],point[j][1],point[j][2],document,j));
-	            }
-	            agentNetElement.appendChild(newArc);
-	            //newArc = null;
-	         }
-	         
-	         InhibitorArc[] inhibitorArcs = agentLayer.getInhibitors();
-	         for (int i = 0; i < inhibitorArcs.length; i++) {
-	            Element newArc = createArcElement(inhibitorArcs[i],document);
-
-	            int arcPoints = inhibitorArcs[i].getArcPath().getArcPathDetails().length;
-	            String[][] point = inhibitorArcs[i].getArcPath().getArcPathDetails();
-	            for (int j = 0; j < arcPoints; j++) {
-	               newArc.appendChild(createArcPoint(point[j][0],
-	                        point[j][1],
-	                        point[j][2],
-	                        document,j));
-	            }
-	            agentNetElement.appendChild(newArc);
-	         }
-	         
-	         StateGroup[] stateGroups = agentLayer.getStateGroups();
-	         for(int i = 0; i< stateGroups.length; i++) {
-	            Element newStateGroup = createStateGroupElement(stateGroups[i], document);
-	            
-	            int numConditions = stateGroups[i].numElements();
-	            String[] conditions = stateGroups[i].getConditions();
-	            for(int j = 0; j<numConditions; j++) {
-	               newStateGroup.appendChild(createCondition(conditions[j], document));
-	            }
-	            agentNetElement.appendChild(newStateGroup);
-	         }
-	   }
-	   return agentNetElement;
-   }
-   
    /**
     * Creates a label Element for a PNML Petri-Net DOM
     * @param inputLabel input label
@@ -447,7 +371,6 @@ public class DataLayerWriter {
       }
       
       if (inputTransition != null ) {
-         Integer attrValue = null;
          Double positionXInput = inputTransition.getPositionXObject();
          Double positionYInput = inputTransition.getPositionYObject();
          Double nameOffsetXInput = inputTransition.getNameOffsetXObject();
@@ -507,11 +430,10 @@ public class DataLayerWriter {
       }
 
       if (inputArc != null ) {
-         Integer attrValue = null;
          double positionXInputD = (int)inputArc.getStartPositionX();
-         Double positionXInput = new Double (positionXInputD);
-         double positionYInputD = (int)inputArc.getStartPositionY();
-         Double positionYInput = new Double (positionXInputD);
+         new Double (positionXInputD);
+         inputArc.getStartPositionY();
+         new Double (positionXInputD);
          String idInput = inputArc.getId();
          String sourceInput = inputArc.getSource().getId();
          String targetInput = inputArc.getTarget().getId();
@@ -594,7 +516,7 @@ public class DataLayerWriter {
          int widthInput = inputParameter.getNoteWidth();
          int heightInput = inputParameter.getNoteHeight();
          double valueInput = inputParameter.getValue();
-         String nameInput = inputParameter.getNoteText();
+         inputParameter.getNoteText();
          String idInput = inputParameter.getName();
          boolean borderInput = inputParameter.isShowingBorder();
          labelElement.setAttribute("defType", "real");
@@ -629,12 +551,12 @@ public class DataLayerWriter {
          
          int positionXInput = inputParameter.getOriginalX();
          int positionYInput = inputParameter.getOriginalY();
-         int widthInput = inputParameter.getNoteWidth();
-         int heightInput = inputParameter.getNoteHeight();
+         inputParameter.getNoteWidth();
+         inputParameter.getNoteHeight();
          int valueInput = inputParameter.getValue();
-         String nameInput = inputParameter.getNoteText();
+         inputParameter.getNoteText();
          String idInput = inputParameter.getName();
-         boolean borderInput = inputParameter.isShowingBorder();
+         inputParameter.isShowingBorder();
          labelElement.setAttribute("defType", "int");
          labelElement.setAttribute("expression", String.valueOf(valueInput));
          labelElement.setAttribute("id", idInput);

@@ -3,15 +3,9 @@
  */
 package pipe.dataLayer.calculations;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 import pipe.dataLayer.calculations.myNode;
 
 import pipe.gui.Pipe;
-import pipe.io.ImmediateAbortException;
-import pipe.io.StateRecord;
-import pipe.io.TransitionRecord;
 
 
 /**
@@ -113,7 +107,6 @@ public class  myNode {
     * Called on root node from within the tree constructor.
     */
     public void RecursiveExpansion() throws TreeTooBigException {
-       int transIndex;                       //Index to count transitions
        int[] newMarkup;                      //markup used to create new node
        boolean aTransitionIsEnabled = false; //To check for deadlock
        //Attribute used for assessing whether a node has occured before

@@ -14,12 +14,10 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 import pipe.dataLayer.Transition;
-import pipe.dataLayer.DataLayer;
 import pipe.gui.CreateGui;
 import formulaParser.parser;
 import formulaParser.ErrorMsg;
 import pipe.gui.widgets.FormulaPanel;
-import formulaParser.FontUtil;
 import formulaParser.Yylex;
 //import edu.fiu.cis.cadse.lib.folutil.StringToXML;
 //import edu.fiu.cis.cadse.lib.folutil.XMLToString;

@@ -40,11 +40,6 @@ public abstract class  Arc
    //public final static String TYPE = "arc";
    /** Current Marking */
    protected int weight = 1;
-   /** Initial Marking X-axis Offset */
-   private Double weightOffsetX = null;
-   /** Initial Marking Y-axis Offset */
-   private Double weightOffsetY = null;
-    
    protected NameLabel weightLabel;
       
    private static Point2D.Double point;

@@ -70,9 +70,6 @@ public class ReachabilityGraphGenerator
    
    private static String dataLayerName;
    
-   private static DataLayer pnmlData;
-   
-   
    public void run(DataLayer pnmlData) {
       // Build interface
 
@@ -151,7 +148,7 @@ public class ReachabilityGraphGenerator
                // when the net is bounded so we could just generate the 
                // coverability graph
                if (generateCoverability) {
-                  myTree tree = new myTree(sourceDataLayer, 
+                  new myTree(sourceDataLayer, 
                                         sourceDataLayer.getCurrentMarkingVector(),
                                         reachabilityGraph);        
                   s += "<br>Reachability graph couldn't be generated ";

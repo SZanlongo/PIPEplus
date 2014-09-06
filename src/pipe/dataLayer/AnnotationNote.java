@@ -195,7 +195,7 @@ public class AnnotationNote
       g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, 
                           RenderingHints.VALUE_STROKE_NORMALIZE);
 
-      AffineTransform saveAT = g2.getTransform();
+      g2.getTransform();
       g2.transform(Zoomer.getTransform(zoom));   
       if (selected && !ignoreSelection) {
          g2.setPaint(Pipe.SELECTION_FILL_COLOUR);
@@ -282,7 +282,6 @@ public class AnnotationNote
            extends javax.swing.JComponent {
  
       private int SIZE   = 3;
-      private int OFFSET = 1;
       private static final int TOP    = 1;
       private static final int BOTTOM = 2;
       private static final int LEFT   = 4;

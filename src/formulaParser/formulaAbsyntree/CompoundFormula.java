@@ -1,6 +1,4 @@
 package formulaParser.formulaAbsyntree;
-import java.util.ArrayList;
-
 import formulaParser.Visitor;
 public abstract class CompoundFormula extends Formula{
 	public int pos;

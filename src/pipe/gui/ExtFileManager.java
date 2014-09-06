@@ -48,7 +48,7 @@ public class ExtFileManager {
             System.err.println("Class " + name + " wasn't loaded.");
          }
       }
-      URL[] myPaths = cLoader.getURLs();
+      cLoader.getURLs();
       
       return myClass;
    }

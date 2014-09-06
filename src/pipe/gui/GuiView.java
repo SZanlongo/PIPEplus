@@ -349,7 +349,7 @@ public class GuiView
    
    
    public void remove(Component comp) {
-      boolean result = petriNetObjects.remove(comp);
+      petriNetObjects.remove(comp);
       //if (result) {
       //   System.out.println("DEBUG: remove PNO from view");
       ///}
@@ -414,7 +414,7 @@ public class GuiView
        
       JViewport viewport = (JViewport)getParent();
       
-      double currentXNoZoom = Zoomer.getUnzoomedValue(
+      Zoomer.getUnzoomedValue(
               viewport.getViewPosition().x + (viewport.getWidth() * 0.5), zoom);
       double newZoomedX = Zoomer.getZoomedValue(point.x, zoom);
       double newZoomedY = Zoomer.getZoomedValue(point.y, zoom);

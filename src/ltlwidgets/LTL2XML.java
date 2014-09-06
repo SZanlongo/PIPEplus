@@ -36,7 +36,6 @@ public class LTL2XML {
     }
 
     private String buildXML(){
-        java.io.Reader inp = (java.io.Reader) (new java.io.StringReader(m_str));
         m_errorMsgs = new ErrorMsg(m_str);
         ParseLTL parse = new ParseLTL(m_str, m_errorMsgs);
         if (m_errorMsgs.anyErrors) {

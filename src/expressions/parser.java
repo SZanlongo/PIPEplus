@@ -244,8 +244,6 @@ class CUP$parser$actions {
           case 21: // bool_expr ::= LPAREN bool_expr RPAREN 
             {
               Object RESULT =null;
-		int eleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
-		int eright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
 		Object e = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		 RESULT=e; 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -256,8 +254,6 @@ class CUP$parser$actions {
           case 20: // bool_expr ::= NOT bool_expr 
             {
               Object RESULT =null;
-		int eleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int eright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object e = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=!((Boolean) e); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -268,11 +264,7 @@ class CUP$parser$actions {
           case 19: // bool_expr ::= bool_expr OR bool_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Boolean) l) || ((Boolean)r)); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -283,11 +275,7 @@ class CUP$parser$actions {
           case 18: // bool_expr ::= bool_expr AND bool_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Boolean) l) && ((Boolean)r)); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -298,11 +286,7 @@ class CUP$parser$actions {
           case 17: // bool_expr ::= math_expr NE math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Double )l).doubleValue()!= ((Double) r).doubleValue()); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -313,11 +297,7 @@ class CUP$parser$actions {
           case 16: // bool_expr ::= math_expr EQ math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Double )l).doubleValue()== ((Double) r).doubleValue()); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -328,11 +308,7 @@ class CUP$parser$actions {
           case 15: // bool_expr ::= math_expr GE math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Double )l).doubleValue()>= ((Double) r).doubleValue()); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -343,11 +319,7 @@ class CUP$parser$actions {
           case 14: // bool_expr ::= math_expr LE math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Double )l).doubleValue()<= ((Double) r).doubleValue()); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -358,11 +330,7 @@ class CUP$parser$actions {
           case 13: // bool_expr ::= math_expr GT math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Double )l).doubleValue()> ((Double) r).doubleValue()); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -373,11 +341,7 @@ class CUP$parser$actions {
           case 12: // bool_expr ::= math_expr LT math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=new Boolean(((Double )l).doubleValue()< ((Double) r).doubleValue()); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("bool_expr",1, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -388,8 +352,6 @@ class CUP$parser$actions {
           case 11: // math_expr ::= VAR 
             {
               Object RESULT =null;
-		int vleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int vright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		String v = (String)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=parser.exp.getValue(v); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -400,8 +362,6 @@ class CUP$parser$actions {
           case 10: // math_expr ::= LPAREN math_expr RPAREN 
             {
               Object RESULT =null;
-		int eleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
-		int eright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
 		Object e = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		 RESULT=e; 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -412,8 +372,6 @@ class CUP$parser$actions {
           case 9: // math_expr ::= MINUS math_expr 
             {
               Object RESULT =null;
-		int eleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int eright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object e = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert(-((Double)e) ); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -424,11 +382,7 @@ class CUP$parser$actions {
           case 8: // math_expr ::= math_expr POWER math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert(Math.pow( ((Double) l) , ((Double) r))); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -439,11 +393,7 @@ class CUP$parser$actions {
           case 7: // math_expr ::= math_expr DIV math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert(((Double) l) / ((Double) r)); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -454,11 +404,7 @@ class CUP$parser$actions {
           case 6: // math_expr ::= math_expr TIMES math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert(((Double) l) * ((Double) r)); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -469,11 +415,7 @@ class CUP$parser$actions {
           case 5: // math_expr ::= math_expr MINUS math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert(((Double) l) - ((Double) r)); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -484,11 +426,7 @@ class CUP$parser$actions {
           case 4: // math_expr ::= math_expr PLUS math_expr 
             {
               Object RESULT =null;
-		int lleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).left;
-		int lright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)).right;
 		Object l = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-2)).value;
-		int rleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int rright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object r = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert( ((Double) l) + ((Double) r) ); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-2)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -499,8 +437,6 @@ class CUP$parser$actions {
           case 3: // math_expr ::= NUMBER 
             {
               Object RESULT =null;
-		int nleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int nright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Double n = (Double)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 RESULT=Converter.convert((Double)n); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("math_expr",2, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -511,8 +447,6 @@ class CUP$parser$actions {
           case 2: // expr ::= bool_expr 
             {
               Object RESULT =null;
-		int eleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int eright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object e = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 this.parser.result=e; 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",0, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -523,8 +457,6 @@ class CUP$parser$actions {
           case 1: // $START ::= expr EOF 
             {
               Object RESULT =null;
-		int start_valleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
-		int start_valright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
 		Object start_val = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
 		RESULT = start_val;
               CUP$parser$result = parser.getSymbolFactory().newSymbol("$START",0, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
@@ -537,8 +469,6 @@ class CUP$parser$actions {
           case 0: // expr ::= math_expr 
             {
               Object RESULT =null;
-		int eleft = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
-		int eright = ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object e = (Object)((expressions.java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		 this.parser.result=e; 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("expr",0, ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((expressions.java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);

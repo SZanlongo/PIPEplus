@@ -1,8 +1,6 @@
 package pipe.gui.widgets;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
@@ -12,11 +10,9 @@ import javax.swing.JPanel;
 import javax.swing.JRootPane;
 import javax.swing.JSpinner;
 import javax.swing.ListSelectionModel;
-import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeListener;
 
 import pipe.dataLayer.DataLayer;
-import pipe.dataLayer.MarkingParameter;
 import pipe.dataLayer.Place;
 import pipe.dataLayer.DataType;
 import pipe.gui.GuiView;
@@ -321,7 +317,7 @@ public class PlaceTypePanel extends JPanel {
 		        	}
 	      });
 	      
-//	      buttonPanel1.add(powcheckbox);
+	      buttonPanel1.add(powcheckbox);
 	      
 	      
 
@@ -596,12 +592,6 @@ public class PlaceTypePanel extends JPanel {
 //	   }//GEN-LAST:event_markingComboBoxActionPerformed
 
 	   
-	   private void okButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_okButtonKeyPressed
-	      if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
-	        // doOK();
-	      }
-	   }//GEN-LAST:event_okButtonKeyPressed
-
 	   private void showWarning(String message)
 	   {
 		   TextLabel.setForeground(Color.RED);

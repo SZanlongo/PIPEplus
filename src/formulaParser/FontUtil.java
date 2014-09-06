@@ -1,9 +1,6 @@
 package formulaParser;
 
 import java.awt.Font;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 
 /**
  * <p>Title: FOL Editor</p>
@@ -20,7 +17,6 @@ import java.io.InputStream;
 public class FontUtil {
     private FontUtil() {
     }
-    private static final String FONT_SYMBOL_NAME = "Logic.ttf";
     public static Font loadDefaultTLFont(){
         Font font = null;
 //        try{

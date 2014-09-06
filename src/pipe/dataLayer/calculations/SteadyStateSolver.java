@@ -162,7 +162,6 @@ public class SteadyStateSolver {
       // Used to decide whether a particular x value has converged or not
       boolean[] converged = new boolean[numrows];
       boolean plausible = false;
-      double xprevious;
       double residual;
       double epsilon = 0.00001;
       

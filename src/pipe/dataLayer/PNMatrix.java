@@ -158,7 +158,7 @@ public class PNMatrix {
       int cardRow = -1; // a value >= 0 means either pPlus or pMinus have 
       // cardinality == 1 and it is the value of the row where this condition 
       // occurs -1 means that both pPlus and pMinus have cardinality != 1
-      int pPlusCard = 0, pMinusCard = 0, countpPlus = 0, countpMinus = 0;
+      int countpPlus = 0, countpMinus = 0;
       int[] pPlus, pMinus; // arrays containing the indices of +ve and -ve
       int m = getRowDimension(), n = getColumnDimension();
       int pLength = n, mLength = n;
@@ -195,7 +195,7 @@ public class PNMatrix {
    public int cardinalityOne(){
       int k = -1; // the col index of cardinality == 1 element
       
-      int pPlusCard = 0, pMinusCard = 0, countpPlus = 0, countpMinus = 0;
+      int countpPlus = 0, countpMinus = 0;
       int[] pPlus, pMinus; // arrays containing the indices of +ve and -ve
       int m = getRowDimension(), n = getColumnDimension();
       int pLength = n, mLength = n;
@@ -284,7 +284,7 @@ public class PNMatrix {
       // changed by linear combination.
       //the col index of cardinality == 1 element
       
-      int pPlusCard = 0, pMinusCard = 0, countpPlus = 0, countpMinus = 0;
+      int countpPlus = 0, countpMinus = 0;
       int[] pPlus, pMinus; // arrays containing the indices of +ve and -ve
       int m = getRowDimension();
       int n = getColumnDimension();

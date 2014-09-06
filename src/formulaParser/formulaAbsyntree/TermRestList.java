@@ -1,5 +1,4 @@
 package formulaParser.formulaAbsyntree;
-import formulaParser.Visitor;
 import java.util.Vector;
 
 public class TermRestList {

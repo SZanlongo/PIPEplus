@@ -52,8 +52,6 @@ public class myTree {
       
       dataLayer = data;
       
-      int[] markup = treeRoot;
-      
       CPlus = new PNMatrix(data.getForwardsIncidenceMatrix());
       CMinus = new PNMatrix(data.getBackwardsIncidenceMatrix());
       inhibition = new PNMatrix(data.getInhibitionMatrix());
@@ -83,10 +81,6 @@ public class myTree {
    throws  TreeTooBigException, ImmediateAbortException {
       
       dataLayer = data;
-      int numTransitions = 0;
-      
-      int[] markup = treeRoot;
-      
       CPlus = new PNMatrix(data.getForwardsIncidenceMatrix());
       CMinus = new PNMatrix(data.getBackwardsIncidenceMatrix());
       inhibition = new PNMatrix(data.getInhibitionMatrix());
@@ -169,14 +163,9 @@ public class myTree {
    public void createCoverabilityGraph(RandomAccessFile outputFile,
            RandomAccessFile esoFile) throws TreeTooBigException,
            ImmediateAbortException {
-      int transIndex;                       //Index to count transitions
       int[] newMarkup;                      //markup used to create new node
-      boolean aTransitionIsEnabled = false; //To check for deadlock
-      
       //Attribute used for assessing whether a node has occured before
       boolean repeatedNode = false;
-      
-      boolean allOmegas;
       
       boolean[] enabledTransitions =
               dataLayer.getTransitionEnabledStatusArray(root.markup);
@@ -221,13 +210,7 @@ public class myTree {
                currentNode.children[i] =
                        new myNode(newMarkup, currentNode, this, currentNode.depth + 1);
                
-                /* Now need to (a) check if any omegas (represented by -1) need to
-                 * be inserted in the markup vector of the new node, and (b) if the
-                 * resulting markup vector has appeared anywhere else in the tree.
-                 * We must do (a) before (b) as we need to know if the new node
-                 * contains any omegas to be able to compare it with existing nodes.
-                 */
-               allOmegas = currentNode.children[i].InsertOmegas();
+                currentNode.children[i].InsertOmegas();
                
                //print("\n New Markup (after omegas) is :", newMarkup);//debug
                //System.out.println("afegit fill a la posicio " + i +
@@ -278,14 +261,9 @@ public class myTree {
    public void createCoverabilityTree(RandomAccessFile outputFile,
            RandomAccessFile esoFile) throws TreeTooBigException,
            ImmediateAbortException {
-      int transIndex;                       //Index to count transitions
       int[] newMarkup;                      //markup used to create new node
-      boolean aTransitionIsEnabled = false; //To check for deadlock
-      
       //Attribute used for assessing whether a node has occured before
       boolean repeatedNode = false;
-      
-      boolean allOmegas;
       
       boolean[] enabledTransitions =
               dataLayer.getTransitionEnabledStatusArray(root.markup);
@@ -330,13 +308,7 @@ public class myTree {
                currentNode.children[i] =
                        new myNode(newMarkup, currentNode, this, currentNode.depth + 1);
                
-                /* Now need to (a) check if any omegas (represented by -1) need to
-                 * be inserted in the markup vector of the new node, and (b) if the
-                 * resulting markup vector has appeared anywhere else in the tree.
-                 * We must do (a) before (b) as we need to know if the new node
-                 * contains any omegas to be able to compare it with existing nodes.
-                 */
-               allOmegas = currentNode.children[i].InsertOmegas();
+                currentNode.children[i].InsertOmegas();
                
                //print("\n New Markup (after omegas) is :", newMarkup);//debug
                //System.out.println("afegit fill a la posicio " + i +

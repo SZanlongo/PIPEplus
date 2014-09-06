@@ -3,9 +3,6 @@ package formulaParser;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import pipe.dataLayer.Token;
-import pipe.dataLayer.abToken;
-
 public class SymbolTable {
 
 	public ArrayList<Symbol> table = new ArrayList<Symbol>();

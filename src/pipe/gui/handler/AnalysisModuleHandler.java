@@ -21,14 +21,11 @@ import javax.swing.JTextField;
 import pipe.dataLayer.DataLayer;
 import pipe.gui.CreateGui;
 import pipe.gui.widgets.ButtonBar;
-import pipe.gui.widgets.PetriNetChooserPanel;
 import pipe.gui.widgets.ResultsTxtPane;
 import pipe.gui.widgets.EscapableDialog;
 //import sam_model.SamModel;
 //import sam_model.analysis.ElementaryNetComposition;
 import analysis.myPromela;
-import pipe.gui.GuiFrame;
-import pipe.gui.CreateGui;
 
 public class AnalysisModuleHandler extends AbstractAction {
 	
@@ -36,8 +33,6 @@ public class AnalysisModuleHandler extends AbstractAction {
 	private static final String MODULE_NAME = "Translation from Petri Net to Promela";
 	private ResultsTxtPane results;
 	private JTextField formulatext;
-	private JLabel formulaSpecLabel;
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton){
@@ -64,7 +59,7 @@ public class AnalysisModuleHandler extends AbstractAction {
 	      contentPane.add(results = new ResultsTxtPane(null)); //SUTODO: the null parameter in ResultsTxtPane to be reconsider.
 	      
 	      //add  formula textbox
-	      contentPane.add(formulaSpecLabel = new JLabel("Property Formula Specification:"));
+	      contentPane.add(new JLabel("Property Formula Specification:"));
 	      contentPane.add(formulatext = new JTextField(CreateGui.getModel().getPropertyFormula()));
 	      
 	      // 4 Add button

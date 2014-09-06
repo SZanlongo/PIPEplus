@@ -325,10 +325,6 @@ public class MinimalSiphons
            final SetOfPlaces Ptilde) {
       SetOfPlaces StildeCopy = new SetOfPlaces(Stilde);
       int placeToEliminate;
-      boolean[] placePostSet;
-      boolean[] transitionPostSet;
-      boolean[] transitionPreSet;
-      
       // Step 1
       do {
          placeToEliminate = eliminablePlace_FMS(G, StildeCopy, Ptilde);
@@ -376,7 +372,6 @@ public class MinimalSiphons
    private int eliminablePlace_FMS(final PetriNet G, final SetOfPlaces Stilde,
            final SetOfPlaces Ptilde) {
       
-      int placeToEliminate = -1;
       boolean[] placePostSet;
       boolean[] transitionPostSet;
       boolean[] transitionPreSet;
@@ -484,16 +479,6 @@ public class MinimalSiphons
    }
    
       
-   // used for debug
-   private void print(String string, boolean[] b) {
-      System.out.println(string);
-      for (int i = 0; i < b.length; i++) {
-         System.out.print(b[i] + " ");
-      }
-      System.out.println();
-   }
-      
-   
    // helper class. 
    // TODO: optimize it
    private class PetriNet{
@@ -643,26 +628,6 @@ public class MinimalSiphons
          return result;
       }
       
-      
-      // prints info for debug
-      private void debug() {
-         P.debug("P");
-         T.debug("T");
-         System.out.println("");
-         System.out.print("Forwards Incidence Matrix");
-         forwardsIncidenceMatrix.print(
-                 forwardsIncidenceMatrix.getColumnDimension(), 0);
-         System.out.print("Backwards Incidence Matrix");
-         backwardsIncidenceMatrix.print(
-                 backwardsIncidenceMatrix.getColumnDimension(), 0);
-         
-         System.out.print("P PostSet = { ");
-         for (int i = 0; i < PPostSet.length; i++) {
-            System.out.print(PPostSet[i]? i + " " : "");
-         }
-         System.out.println("}");
-      }
-      
    }
    
    
@@ -797,16 +762,6 @@ public class MinimalSiphons
          return containsSet;
       }
       
-      
-      // used for debug purposes
-      private void debug(String s) {
-         System.out.print(s + " = { ");
-         for (int j = 0; j < P.length; j++) {
-            System.out.print(P[j]? j + " " : "");
-         }
-         System.out.println("}");
-      }
-      
    }
    
    
@@ -841,16 +796,6 @@ public class MinimalSiphons
       // sets to false position i of T
       private void remove(int transition) {
          T[transition] = false;
-      }
-      
-      
-      // used for debug purposes
-      private void debug(String s) {
-         System.out.print(s + " = { ");
-         for (int j = 0; j < T.length; j++) {
-            System.out.print(T[j]? j + " " : "");
-         }
-         System.out.println("}");
       }
       
    }

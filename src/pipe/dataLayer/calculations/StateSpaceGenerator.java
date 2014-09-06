@@ -44,8 +44,6 @@ import pipe.io.TransitionRecord;
 public class StateSpaceGenerator {
    
    private static final boolean DEBUG = false;
-   private static final boolean RATE = false;
-   private static final boolean PROBABILITY = true;
    private static final int NUMHASHROWS = 46567;
 
    //  Array storing the transitions fired
@@ -80,8 +78,6 @@ public class StateSpaceGenerator {
       // Counters used for creating the reachability graph file
       int numStates = 0;
       int numTransitions = 0;
-      int numtransitionsfired = 0;
-
       // Temporary files for storing tangible states and the transitions between
       // them. They are later combined into one file by the createRGFile method.
       RandomAccessFile outputFile;
@@ -115,7 +111,7 @@ public class StateSpaceGenerator {
          
          s = (Marking)statesQueue.dequeue();
          
-         numtransitionsfired += fire(pnmlData, s, tansuccessor);
+         fire(pnmlData, s, tansuccessor);
          while (!tansuccessor.isEmpty()) {
             sprime = (State)tansuccessor.pop();
             if (!explored(sprime, exploredStates)) {
@@ -920,7 +916,7 @@ public class StateSpaceGenerator {
             RandomAccessFile destination, int statesize, int states, 
             int transitions, boolean withTransitions) {
       RandomAccessFile transinputFile;
-      StateRecord currentstate = new StateRecord();
+      new StateRecord();
       TransitionRecord currenttran = new TransitionRecord();
       RGFileHeader header;
       try {
@@ -964,32 +960,6 @@ public class StateSpaceGenerator {
          e.getMessage();
          return;
       }
-   }
-   
-   
-   private static void printArray(boolean[] array) {
-      int rows = array.length;
-      System.out.print("Elements as follows: ");
-      for (int i = 0; i < rows; i++) {
-         System.out.print(array[i] + " ");
-      }
-      System.out.println();
-   }
-
-   
-   private static void printArray(int[] array) {
-      int rows = array.length;
-      System.out.print("Elements as follows: ");
-      for (int i = 0; i < rows; i++) {
-         System.out.print(array[i] + " ");
-      }
-      System.out.println();
-   }
-   
-   
-   private static void printArray(State state) {
-      int[] array = state.getState();
-      printArray(array);
    }
    
 }

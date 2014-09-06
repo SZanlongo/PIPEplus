@@ -8,7 +8,6 @@ import java.awt.GridBagLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
@@ -30,7 +29,6 @@ public class EnterOptionsPane
    private JLabel startStLbl, targetStLbl, stepLbl, TStopLbl, TStartLbl, 
            bufferLbl;
    private JTextArea errorField;
-   private JScrollPane scroller;
    private JCheckBox calcRTbox, calcCDFbox;
    private HadoopPane hadpne;
    
